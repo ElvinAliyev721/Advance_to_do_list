@@ -221,24 +221,13 @@ bindEvent(document.body, 'keydown', function (e) {
 
 
 let srt1 = document.querySelector(".srt1")
-let img_src = document.querySelector(".srt1 img")
-srt1.addEventListener("click", (event) => {
-  if (img_src.src == "http://127.0.0.1:5500/assets/Photos/sort.png") {
-    img_src.src = "http://127.0.0.1:5500/assets/Photos/sort2.png"
-  } else {
-    img_src.src = "http://127.0.0.1:5500/assets/Photos/sort.png"
-  }
+let srt2 = document.querySelector(".srt2")
+srt2.style.display="none"
+srt1.addEventListener("click",()=>{
+  srt2.style.display="block"
+  srt1.style.display="none"
 })
-
-
-//drag
-// let myul_ = document.querySelector("#myUl")
-// if (myul_.childNodes.length > 0) {
-//   let myUl_all_li = document.querySelectorAll("#myUl li")
-//   myUl_all_li.forEach(e => {
-//     e.addEventListener('dragstart', (li) => {
-//       console.log(li.target.innerHTML)
-//     })
-//   })
-
-// }
+srt2.addEventListener("click",()=>{
+  srt1.style.display="block"
+  srt2.style.display="none"
+})
