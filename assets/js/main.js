@@ -19,7 +19,7 @@ var Element = {
         })
         myul_.addEventListener("drop",(li)=>{
           const dragedItemId=li.dataTransfer.getData("text")
-          myul_.append(document.getElementById(dragedItemId))
+          myul_.append(document.getElementById( dragedItemId))
         })
         //drG END
 

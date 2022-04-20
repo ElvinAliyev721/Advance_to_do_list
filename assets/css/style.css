@@ -524,3 +524,6 @@ img {
 .d_none{
     display: none;
 }
+#new-value{
+    color: white;
+}
