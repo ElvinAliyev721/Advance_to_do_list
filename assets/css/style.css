@@ -527,3 +527,17 @@ img {
 #new-value{
     color: white;
 }
+
+.container_for_search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.search_inpt{
+    border: none;
+    border-radius: 20px;
+    height: 20px;
+    padding-left: 7px;
+    padding-right: 7px;
+}

@@ -12,7 +12,12 @@
 
 <body>
   <div class="todo-container clearfix">
-    <div class="only_yellow"></div>
+    <div class="only_yellow">
+      <div class="container_for_search">
+        <i class="fas fa-search"></i>
+        <input id="search_list_tasks_input" class="search_inpt" type="text">
+      </div>
+    </div>
     <header class="clearfix">
       <h1>To-Do List</h1>
       <h2>Total: <span id="total-tasks">0</span></h2>
@@ -126,10 +131,6 @@
 
 
   </script>
-  <!-- document.querySelector("#srt").addEventListener("click", (e) => {
-    console.log(e.target.src)
-    console.log(window.location.host)
-  }) -->
 </body>
 
 </html>

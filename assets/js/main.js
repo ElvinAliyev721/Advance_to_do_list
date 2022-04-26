@@ -1,25 +1,25 @@
 let myul_ = document.querySelector("#myUl")
 var Element = {
-  counter_id:0,
+  counter_id: 0,
   createNew: function (elemName, parentName, parentIndex, elemText) {
     if (elemName !== undefined && parentName !== undefined && parentIndex !== undefined) {
       if (typeof elemName === "string" && typeof parentName === "string" && typeof parentIndex === "number") {
         var elem = document.createElement(elemName);
         elem.setAttribute('draggable', true);
-        this.counter_id+=1
+        this.counter_id += 1
         elem.setAttribute('id', this.counter_id);
         //drG START
 
         elem.addEventListener('dragstart', (li) => {
-          li.dataTransfer.setData("text",li.target.id)
+          li.dataTransfer.setData("text", li.target.id)
           // console.log(li.target.id)
         })
-        myul_.addEventListener("dragover",(li)=>{
+        myul_.addEventListener("dragover", (li) => {
           li.preventDefault()
         })
-        myul_.addEventListener("drop",(li)=>{
-          const dragedItemId=li.dataTransfer.getData("text")
-          myul_.append(document.getElementById( dragedItemId))
+        myul_.addEventListener("drop", (li) => {
+          const dragedItemId = li.dataTransfer.getData("text")
+          myul_.append(document.getElementById(dragedItemId))
         })
         //drG END
 
@@ -222,12 +222,23 @@ bindEvent(document.body, 'keydown', function (e) {
 
 let srt1 = document.querySelector(".srt1")
 let srt2 = document.querySelector(".srt2")
-srt2.style.display="none"
-srt1.addEventListener("click",()=>{
-  srt2.style.display="block"
-  srt1.style.display="none"
+srt2.style.display = "none"
+srt1.addEventListener("click", () => {
+  srt2.style.display = "block"
+  srt1.style.display = "none"
 })
-srt2.addEventListener("click",()=>{
-  srt1.style.display="block"
-  srt2.style.display="none"
+srt2.addEventListener("click", () => {
+  srt1.style.display = "block"
+  srt2.style.display = "none"
+})
+
+
+let close_search = document.querySelector('#close_search')
+let search_input = document.getElementById('search_list_tasks_input')
+search_input.addEventListener('input', (event) => {
+  let list_into_ul = document.querySelectorAll('#myUl li')
+  list_into_ul.forEach((li) => {
+    (li.innerText.toLowerCase().includes(event.target.value.toLowerCase())) ?
+      li.style.display = 'block' : li.style.display = 'none'
+  })
 })
